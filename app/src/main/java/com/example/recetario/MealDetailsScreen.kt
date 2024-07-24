@@ -34,12 +34,27 @@ fun MealDetailScreen(mealId: String, recetarioViewModel: RecetarioViewModel = vi
                 contentDescription = meal.strMeal,
                 modifier = Modifier.padding(bottom = 16.dp)
             )
-            Text(text = meal.strMeal, style = MaterialTheme.typography.labelLarge, modifier = Modifier.padding(bottom = 8.dp))
-            Text(text = "Category: ${meal.strCategory}", modifier = Modifier.padding(bottom = 8.dp))
-            Text(text = "Area: ${meal.strArea}", modifier = Modifier.padding(bottom = 8.dp))
-            Text(text = "Ingredients:", style = MaterialTheme.typography.labelMedium, modifier = Modifier.padding(top = 8.dp, bottom = 4.dp))
+            Text(
+                text = meal.strMeal,
+                style = MaterialTheme.typography.headlineMedium,
+                modifier = Modifier.padding(bottom = 8.dp)
+            )
+            Text(
+                text = "Category: ${meal.strCategory}",
+                style = MaterialTheme.typography.titleLarge,
+                modifier = Modifier.padding(bottom = 8.dp)
+            )
+            Text(
+                text = "Area: ${meal.strArea}",
+                style = MaterialTheme.typography.titleLarge,
+                modifier = Modifier.padding(bottom = 8.dp)
+            )
+            Text(
+                text = "Ingredients:",
+                style = MaterialTheme.typography.titleLarge,
+                modifier = Modifier.padding(top = 8.dp, bottom = 4.dp)
+            )
 
-            // Mostrar ingredientes y medidas
             val ingredients = listOf(
                 meal.strIngredient1, meal.strIngredient2, meal.strIngredient3, meal.strIngredient4, meal.strIngredient5,
                 meal.strIngredient6, meal.strIngredient7, meal.strIngredient8, meal.strIngredient9, meal.strIngredient10,
@@ -55,11 +70,15 @@ fun MealDetailScreen(mealId: String, recetarioViewModel: RecetarioViewModel = vi
 
             ingredients.zip(measures).forEach { (ingredient, measure) ->
                 if (!ingredient.isNullOrEmpty() && !measure.isNullOrEmpty()) {
-                    Text(text = "$ingredient: $measure")
+                    Text(text = "$ingredient: $measure", style = MaterialTheme.typography.bodyLarge)
                 }
             }
 
-            Text(text = "Instructions: ${meal.strInstructions}", modifier = Modifier.padding(top = 8.dp))
+            Text(
+                text = "Instructions: ${meal.strInstructions}",
+                style = MaterialTheme.typography.bodyLarge,
+                modifier = Modifier.padding(top = 8.dp)
+            )
         }
     }
 }

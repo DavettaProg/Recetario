@@ -2,33 +2,34 @@ package com.example.recetario.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
+import com.example.recetario.R
 
-// Set of Material typography styles to start with
+// Define la fuente personalizada
+val CustomFontFamily = FontFamily(
+    Font(R.font.custom_font_regular, FontWeight.Normal),
+    Font(R.font.custom_font_bold, FontWeight.Bold)
+)
+
+// Define la tipografía con la fuente personalizada
 val Typography = Typography(
-    bodyLarge = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.Normal,
-        fontSize = 16.sp,
-        lineHeight = 24.sp,
-        letterSpacing = 0.5.sp
-    )
-    /* Other default text styles to override
-    titleLarge = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.Normal,
-        fontSize = 22.sp,
-        lineHeight = 28.sp,
-        letterSpacing = 0.sp
+    headlineMedium = TextStyle(
+        fontFamily = CustomFontFamily,
+        fontWeight = FontWeight.Bold,
+        fontSize = 28.sp // Ajusta el tamaño según tu necesidad
     ),
-    labelSmall = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.Medium,
-        fontSize = 11.sp,
-        lineHeight = 16.sp,
-        letterSpacing = 0.5.sp
-    )
-    */
+    titleLarge = TextStyle(
+        fontFamily = CustomFontFamily,
+        fontWeight = FontWeight.Bold,
+        fontSize = 22.sp // Ajusta el tamaño según tu necesidad
+    ),
+    bodyLarge = TextStyle(
+        fontFamily = CustomFontFamily,
+        fontWeight = FontWeight.Normal,
+        fontSize = 16.sp // Ajusta el tamaño según tu necesidad
+    ),
+    // Define otros estilos de texto según tu necesidad
 )
